@@ -1,0 +1,73 @@
+{% extends 'maqueta.html' %}
+{% load staticfiles %}
+{% block principal %}
+<link rel="stylesheet" href="{% static 'css/estiloform.css' %}">
+    <div class="formu">
+      <h1>Lista de Lugares</h1>
+            <table>
+              <!-- Si el Usuario Logueado es Admin, entonces muestra estos campos en la Tabla  -->
+                {% if actual.is_staff %}
+                  <tr>
+                    <td id="top">Nombre</td>
+                    <td id="top">Descripcion</td>
+                    <td id="top">Direccion</td>
+                    <td id="top">Imagen</td>
+                    <td id="top">Correo</td>
+                    <td id="top">Telefono</td>
+                    <td id="top">Acciones</td>
+                  </tr>
+                  <tbody>
+                    {% if lugars %}
+                    <!-- Si hay Lugares Ingresados al Sistema, los Muestra -->
+                        {% for p in lugars %}
+                        <tr>
+                            <td>{{ p.Nombre }}</td>
+                            <td>{{ p.Descripcion }}</td>
+                            <td>{{ p.Direccion }}</td>
+                            <td><img src='{{ p.Imagen|cut:"TurismoApp" }}' width="100px" height="50px"></td>
+                            <td>{{ p.Correo }}</td>
+                            <td>{{ p.Telefono }}</td>
+                            <td>
+                                {% if p %}
+                                    <a href="{% url 'borrarLugar' p.Codigo %}">Eliminar</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {%endfor%}
+                    {% else %}
+                    <!-- Si hay Lugares Ingresados al Sistema, los Muestra -->
+                      <h1>No hay Lugares Registrados</h1>
+                    {% endif %}
+                  </tbody>
+                {% else %}
+                <!-- Si el Usuario Logueado NO es Admin, entonces no Muestra las Acciones  -->
+                  <tr>
+                    <td id="top">Nombre</td>
+                    <td id="top">Descripcion</td>
+                    <td id="top">Direccion</td>
+                    <td id="top">Imagen</td>
+                    <td id="top">Correo</td>
+                    <td id="top">Telefono</td>
+                  </tr>
+                  <tbody>
+                    {% if lugars %}
+                    <!-- Si hay Lugares Ingresados al Sistema, los Muestra -->
+                        {% for p in lugars %}
+                        <tr>
+                            <td>{{ p.Nombre }}</td>
+                            <td>{{ p.Descripcion }}</td>
+                            <td>{{ p.Direccion }}</td>
+                            <td><img src='{{ p.Imagen|cut:"TurismoApp" }}' width="100px" height="50px"></td>
+                            <td>{{ p.Correo }}</td>
+                            <td>{{ p.Telefono }}</td>
+                        </tr>
+                        {%endfor%}
+                    {% else %}
+                    <!-- Si hay Lugares Ingresados al Sistema, los Muestra -->
+                      <h1>No hay Lugares Registrados</h1>
+                    {% endif %}
+                  </tbody>
+                {% endif %}
+        </table>
+        </div>
+{% endblock %}

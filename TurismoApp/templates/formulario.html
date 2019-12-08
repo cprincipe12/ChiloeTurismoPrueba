@@ -1,0 +1,46 @@
+{% extends 'maqueta.html' %}
+{% load staticfiles %}
+
+{% block principal %}
+<link href="{% static 'css/estiloForm.css' %}" rel="stylesheet" type="text/css"/>
+
+<div class="precont">
+    <div class="contenedor">
+    {% if registro == 1 %}
+        <h4 id="ins">Inscribete con nosotros </h4>
+        <br>
+        <form method="POST" id="formulario" name="formulario">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <input style="float: right"  id="enviar" type="submit" class="btn btn-success" value="Enviar" name="btnEnviar" />
+            {% if mensaje != "" %}
+                <script languaje='javascript'>alert('{{mensaje}}')</script>
+            {% endif %}
+        </form>
+    {% else %}
+        {% if actual.is_staff %}
+            <form id="formulario" method="POST">
+                <h1>Registro Usuario</h1>
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <input style="float: right"  id="enviar" type="submit" class="btn btn-success" value="Enviar" name="btnEnviar" />
+                {% if mensaje != "" %}
+                    <script languaje='javascript'>alert('{{mensaje}}')</script>
+                {% endif %}
+            </form>
+        {% else %}
+            <form id="formulario">
+            <h1>Sin Permisos Suficientes</h1>
+            </form>
+        {% endif %}
+    {% endif %}
+    </div>
+</div>
+<script src="{% static 'js/validador.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery.validate.min.js' %}"></script>
+
+{% endblock %}

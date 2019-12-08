@@ -1,0 +1,48 @@
+{% extends 'maqueta.html' %}
+{% load staticfiles %}
+{% block principal %}
+<link rel="stylesheet" href="{% static 'css/estiloform.css' %}">
+    <div class="formu">
+      {% if actual.is_staff %}
+      <!-- Si el Usuario es Admin, le muestra una tabla con los datos de todos los usuarios del Sistema -->
+        <h1>Lista de Personas</h1>
+              <table>
+                      <tr>
+                        <td id="top">Rut</td>
+                        <td id="top">Nombre</td>
+                        <td id="top">Apellido Pateno</td>
+                        <td id="top">Apellido Materno</td>
+                        <td id="top">Fecha de Nacimiento</td>
+                        <td id="top">Correo Electrónico</td>
+                        <td id="top">Telefono</td>
+                        <td id="top">Región</td>
+                        <td id="top">Ciudad</td>
+                        <td id="top">Tipo de Usuario</td>
+                      </tr>
+                  <tbody>
+                  {% if people %}
+                      {% for p in people %}
+                      <tr>
+                          <td>{{ p.Rut }}</td>
+                          <td>{{ p.Nombre }}</td>
+                          <td>{{ p.ApellidoPaterno }}</td>
+                          <td>{{ p.ApellidoMaterno }}</td>
+                          <td>{{ p.FechaNacimiento }}</td>
+                          <td>{{ p.Correo }}</td>
+                          <td>{{ p.Telefono }}</td>
+                          <td>{{ p.Region }}</td>
+                          <td>{{ p.Ciudad }}</td>
+                          <td>{{ p.TipoUsuario }}</td>
+                      </tr>
+                      {%endfor%}
+                  {% endif %}
+              </tbody>
+          </table>
+        {% else %}
+        <!-- Si no es Admin, aparece un Mensaje de Permisos Insuficientes  -->
+          <form class="formu">
+            <h1>Sin Permisos Suficientes</h1>
+          </form>
+        {% endif %}
+        </div>
+{% endblock %}

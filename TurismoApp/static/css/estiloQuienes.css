@@ -1,0 +1,43 @@
+body{
+	background-color : #ccffcc;
+}
+.menu2{
+	text-align : center;
+	margin : 0px;
+	padding : 0px;
+	align-items: center;
+	display: block;
+	list-style-type: none;
+
+
+}
+
+.menu2 li{
+		display: block;
+	display: inline-block;
+	text-align : center;
+	margin:10px 0 0;
+	text-decoration: none;
+	
+}
+.menu2 a{
+	display: block;
+	padding: 15px 15px;
+	text-decoration : none;
+	color : #1761a0;
+	font-size: 15px;	
+}
+#quienes{
+	text-align: center;
+	
+}
+h1{
+	color:#135086;
+}
+h6{
+	color:#165e9c;
+}
+
+.empresa{
+	text-align: center;
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{titulo}}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/turismo.css' %}">
+    <link rel="stylesheet" href="{% static 'fonts.css' %}">
+</head>
+<body>
+    <div class="row">
+    <div class="logo col-md-4">
+        <a href="/index">
+            <img src="{% static 'imagenes/logo3.png' %}" alt="texto alter">   
+        </a>
+    </div>
+    <!-- El Primer If, Te verifica si hay un usuario ya logeado o no, sin importar su tipo de usuario  -->
+    {% if request.user.is_authenticated %}  <!-- Si hay un Usuario Logueado, Mostrará una de las 2 opciones, dependiendo el tipo de Usuario-->
+        {% if user.is_staff %} <!-- Si el usuario es Staff (Admin), Muestra ese Header (REVISAR VIEWS) -->
+            <nav class="navegador">
+                <ul class="menu">
+                    <li>
+                        <a href="/index">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="/registrolugar">Registrar Lugares</a>
+                    </li>
+                    <li>
+                        <a href="/lugares">Listado Lugares</a>
+                    </li>
+                    <li>
+                        <a href="/registroadmin">Registrar Persona</a>
+                    </li> 
+                    <li>
+                        <a href="/personas">Listado Personas</a>
+                    </li>                   
+                    <li>
+                        <a href="/salir">Cerrar Sesion</a>
+                    </li>
+                </ul>
+            </nav>
+        {% else %} <!-- Si es un Usuario normal, muestra esto -->
+            <nav class="navegador">
+                <ul class="menu">
+                    <li>
+                        <a href="/index">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="/lugares">Lugares</a>
+                    </li>
+                    <li>
+                        <a href="/quienessomos">Quienes Somos</a>
+                    </li>
+                    <li>
+                        <a href="/salir">Cerrar Sesion</a>
+                    </li>
+                </ul>
+            </nav>
+        {% endif %}
+    {% else %} <!-- Si no está Logueado le Muestra el Header por Defecto -->
+        <nav class="navegador">
+            <ul class="menu">
+                <li>
+                    <a href="/index">Inicio</a>
+                </li>
+                <li>
+                    <a href="/lugares">Lugares</a>
+                </li>
+                <li>
+                    <a href="/quienessomos">Quienes Somos</a>
+                </li>
+                <li>
+                    <a href="/registro">Registrate</a>
+                </li>
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+            </ul>
+        </nav>
+    {% endif %}
+    </div>
+</div>
+
+    <div class="contenedor">
+        {% block principal %}
+        {% endblock %}
+    </div>
+</body>
+</html>

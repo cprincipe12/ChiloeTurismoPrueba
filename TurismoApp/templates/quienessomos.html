@@ -1,0 +1,30 @@
+{% extends 'maqueta.html' %}
+{% load staticfiles %}
+{% block principal %}
+
+<link rel="stylesheet" href="{% static 'css/estiloQuienes.css' %}">
+
+<div id="quienes">
+    <h1>
+        ¿Quienes somos?
+    </h1>
+    <br>
+    <h6>
+    Somos una empresa dedicada al rubro del turismo, en el especial sobre la Isla de Chiloé, ubicada en la región de Los Lagos. <br>
+    Nuestro fin es que ustedes visiten esta maravillosa Isla, en el cual nuestra página les mostrara lo mejor de Chiloé, tanto sus <br>lugares turísticos
+    como que es lo que pueden degustar en el área gastronómica y donde, ya que según la valoración que le entregan los clientes a <br>cada lugar es como
+    nosotros lo iremos actualizando dentro de la página, todo para que ustedes como turistas tengan la mejor de las experiencias.
+
+    </h6>
+</div>
+<div class="empresa">
+    <br>
+    <img src="{% static 'imagenes/empresa.jpg' %}" alt="texto alter">
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+{% endblock %}

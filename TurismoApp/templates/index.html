@@ -1,0 +1,98 @@
+{% extends 'maqueta.html' %}
+{% load staticfiles %}
+{% block principal %}
+
+<div id="carrucel" class="carousel slide" data-ride="carousel">
+    <!-- Indicadores -->
+		<ol class="carousel-indicators">
+			<li data-target="#carrucel" data-slide-to="0" class="active"></li>
+			<li data-target="#carrucel" data-slide-to="1"></li>
+			<li data-target="#carrucel" data-slide-to="2"></li>
+			<li data-target="#carrucel" data-slide-to="3"></li>
+		</ol>
+
+    <!-- Wrapper for slides -->
+		<div class="carousel-inner">
+			<div id="1" class="item active">
+                <img src="{% static 'imagenes/1.jpg' %}" alt="texto alter">
+			</div>
+	  
+			<div class="item">
+				<img src="{% static 'imagenes/2.jpg' %}" alt="texto alter" >
+
+			</div>
+			
+			<div class="item">
+				<img src="{% static 'imagenes/4.jpg' %}" alt="texto alter" >
+
+			</div>
+			<div class="item">
+				<img src="{% static 'imagenes/5.jpg' %}" alt="texto alter">
+			</div>
+		</div>
+		<a class="left carousel-control" href="#carrucel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a>
+		<a class="right carousel-control" href="#carrucel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div>
+		<div  class="social">
+			<ul>
+				<li><a href="http://www.facebook.com" target="_blank" class="icon-facebook">F</a></li>
+				<li><a href="http://www.twitter.com" target="_blank" class="icon-twitter">T</a></li>
+				<li><a href="http://www.instagram.com" target="_blank" class="icon-instagram">I</a></li>
+			</ul>
+		</div>
+
+
+	<div class=x>
+		<div>
+			<h1 style="color:#165e9c">
+				Reseña
+			</h1>
+			<h5 style="color:#165e9c">
+					La Isla Grande de Chiloé y su archipiélago se ubican al sur de Chile y posee una superficie de más de 9.000 kms2.<br>
+					Se localiza en la X Región de los Lagos y cuenta con una geografía y clima muy particulares, con una cordillera <br>
+					que la atraviesa de norte a sur y es conocida como Cordillera del Piuchén y Cordillera del Pirulil.<br>
+					Posee también suaves colinas y planicies,donde se realizan actividades como cultivos agrícolas y plantación de bosques.<br>
+					<br>
+					También cuenta con canales interiores como el Canal de Chacao, que separa a la isla del continente en Puerto Montt.<br>
+					Otros canales importantes son Caucahué, Quicaví, Dalcahue, Quinchao, Queilén,San Pedro, Yelcho, entre otros.<br>
+					<br>
+					El clima de Chiloé se clasifica como templado marítimo lluvioso, con temperaturas promedio de 11ºC y lluvias que son más<br>
+					abundantes en la zona oeste de la isla, como también en los sectores altos de la cordillera. Se caracteriza porque llueve<br> 
+					todo el año, con sensación térmica más bien fría. Esto permite la existencia de una vegetación exuberante como las nalcas,<br> 
+					arrayanes, quila, alerces y tepú, representantes del bosque valdiviano siempre verde.<br>
+					<br>
+					Por la intervención del hombre, también ahora se pueden encontrar arbustos espinosos que fueron usados para hacer cercos,<br>
+					pero se expandieron por toda la isla. Chiloé también se caracteriza por las 400 variedades de papas nativas que se cultivan y<br>
+					algunas de ellas han dado origen a diversas variedades de papas en el mundo.<br>
+					<br>
+					En Chiloé también encontramos fauna nativa, con especies endémicas como el zorro chilote y el pudú. Otras especies que existen<br>
+					en esta zona son las toninas, lobos marinos y caballo y oveja chilotes.<br>
+					<br>
+					Por su relativo aislamiento del continente, en Chiloé se desarrolló una gran cultura, mitología y folclor diferentes al resto<br>
+					del país, que puede apreciarse en su música, sus bailes (cueca y vals chilote), sus coloridas leyendas y particular arquitectura,<br>
+					que puede observarse principalmente en sus iglesias.<br>
+					<br>
+					Otra de sus particularidades son las construcciones con palafitos, sobre pilares de madera en las aguas, que se edificaron <br>
+					principalmente en los puertos como Castro y hasta el día de hoy pueden encontrarse algunas casas con este estilo.<br>
+					<br>
+			</h5>
+		</div>
+	</div>
+	
+
+	
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Compiled and minified Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<!-- Minified JS library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Compiled and minified Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+
+{% endblock %}
